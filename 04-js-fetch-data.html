@@ -56,15 +56,11 @@
   let usersData = [];
 
   function fetchUsers() {
-    fetch('https://jsonplaceholder.typicode.com/users')
-    .then(response => response.json())
-    .then(data => {
-      usersData = data;
-      displayUsers(usersData);
-    })
-    .catch(error => {
-      console.error('خطا در دریافت داده‌ها:', error);
-    });
+    /* fetch from:
+     * 'https://jsonplaceholder.typicode.com/users'
+     * and save to userData array and invoke displayUsers(usersData)
+     * */
+    displayUsers(usersData);
   }
 
   function displayUsers(data) {
@@ -95,11 +91,7 @@
   }
 
   function searchUsers() {
-    const searchValue = document.getElementById('searchInput').value.toLowerCase();
-    const filteredUsers = usersData.filter(function (user) {
-      return user.name.toLowerCase().includes(searchValue);
-    });
-    displayUsers(filteredUsers);
+    // Create a new search
   }
 
   window.onload = fetchUsers;
