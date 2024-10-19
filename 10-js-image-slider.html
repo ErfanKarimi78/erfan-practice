@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+  <meta charset="UTF-8">
+  <title>اسلایدر تصاویر خودکار</title>
+  <link rel='preconnect' href='https://fonts.googleapis.com'>
+  <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
+  <link href='https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100..900&display=swap' rel='stylesheet'>
+  <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC' crossorigin='anonymous'>
+  <style>
+    * {
+      font-family: Vazirmatn, serif
+    }
+    body {
+      direction: rtl
+    }
+    #slider {
+      direction: ltr;
+      position: relative;
+      margin: 0 auto;
+      overflow: hidden;
+    }
+    #slider img {
+      width: 100%;
+      height: 100%;
+    }
+    #slider .prev, #slider .next {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: rgba(0,0,0,0.5);
+      color: white;
+      padding: 10px;
+      cursor: pointer;
+      font-size: 18px;
+    }
+    #slider .prev {
+      left: 10px;
+    }
+    #slider .next {
+      right: 10px;
+    }
+  </style>
+</head>
+<body>
+
+<div class='container mt-5'>
+  <div class='row justify-content-md-center'>
+    <div class='col-6'>
+      <h1 class='text-center mb-5'>اسلایدر تصاویر خودکار</h1>
+      <div id="slider">
+        <img id="sliderImage" src="" alt="تصویر اسلایدر">
+        <div class="prev" onclick="prevImage()">❮</div>
+        <div class="next" onclick="nextImage()">❯</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  const images = [
+    'https://via.placeholder.com/600x400/ff7f7f/333333?text=Image+1',
+    'https://via.placeholder.com/600x400/7f7fff/333333?text=Image+2',
+    'https://via.placeholder.com/600x400/7fff7f/333333?text=Image+3',
+    'https://via.placeholder.com/600x400/ffff7f/333333?text=Image+4',
+  ];
+
+  let currentIndex = 0;
+  let sliderInterval;
+
+  const sliderImage = document.getElementById('sliderImage');
+
+  sliderImage.src = images[currentIndex];
+
+  function startSlider() {
+    // Create interval
+  }
+
+  function stopSlider() {
+    // Clear interval
+  }
+
+  function nextImage() {
+    // Show the next image
+  }
+
+  function prevImage() {
+    // Show the previous image
+  }
+
+  sliderImage.addEventListener('mouseenter', stopSlider);
+  sliderImage.addEventListener('mouseleave', startSlider);
+
+  startSlider();
+</script>
+
+</body>
+</html>
