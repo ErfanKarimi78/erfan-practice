@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+  <meta charset="UTF-8">
+  <title>ماشین حساب ساده</title>
+  <link rel='preconnect' href='https://fonts.googleapis.com'>
+  <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
+  <link href='https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100..900&display=swap' rel='stylesheet'>
+  <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC' crossorigin='anonymous'>
+  <style>
+    * {
+      font-family: Vazirmatn, serif
+    }
+    body {
+      direction: rtl
+    }
+    #calculator {
+      width: 200px;
+      display: inline-block;
+      border: 1px solid #ccc;
+      padding: 10px;
+    }
+    #display {
+      width: 100%;
+      height: 40px;
+      font-size: 18px;
+      direction: ltr;
+      text-align: right;
+      margin-bottom: 10px;
+      padding-block: 5px;
+      padding-inline: 5px;
+      border: 1px solid #ccc;
+    }
+    button:not(.btn-danger) {
+      width: 22%;
+    }
+  </style>
+</head>
+<body>
+
+<div class='container mt-5'>
+  <div class='row justify-content-md-center'>
+    <div class='col-6'>
+      <h1 class='mb-3'>ماشین حساب</h1>
+
+      <div id="calculator">
+        <div id="display">0</div>
+        <div class='d-flex align-items-center justify-content-between mb-2 w-100'>
+          <button class="btn btn-primary" onclick="press(7)">7</button>
+          <button class="btn btn-primary" onclick="press(8)">8</button>
+          <button class="btn btn-primary" onclick="press(9)">9</button>
+          <button class="btn btn-success" onclick="press('/')">÷</button>
+        </div>
+        <div class='d-flex align-items-center justify-content-between mb-2 w-100'>
+          <button class="btn btn-primary" onclick="press(4)">4</button>
+          <button class="btn btn-primary" onclick="press(5)">5</button>
+          <button class="btn btn-primary" onclick="press(6)">6</button>
+          <button class="btn btn-success" onclick="press('*')">×</button>
+        </div>
+        <div class='d-flex align-items-center justify-content-between mb-2 w-100'>
+          <button class="btn btn-primary" onclick="press(1)">1</button>
+          <button class="btn btn-primary" onclick="press(2)">2</button>
+          <button class="btn btn-primary" onclick="press(3)">3</button>
+          <button class="btn btn-success" onclick="press('-')">−</button>
+        </div>
+        <div class='d-flex align-items-center justify-content-between mb-2 w-100'>
+          <button class="btn btn-primary" onclick="press(0)">0</button>
+          <button class="btn btn-primary" onclick="press('.')">.</button>
+          <button class="btn btn-primary" onclick="calculate()">=</button>
+          <button class="btn btn-success" onclick="press('+')">+</button>
+        </div>
+        <div>
+          <button class="btn btn-danger w-100" onclick="clearDisplay()">پاک کردن</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  let expression = '';
+
+  function press(value) {
+    // create expression
+  }
+
+  function calculate() {
+    // calculate expression
+  }
+
+  function clearDisplay() {
+    // clear expression
+  }
+</script>
+
+</body>
+</html>
