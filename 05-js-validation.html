@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang='fa'>
+<head>
+  <meta charset='UTF-8'>
+  <title>فرم ثبت‌نام کاربر</title>
+  <link rel='preconnect' href='https://fonts.googleapis.com'>
+  <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
+  <link href='https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100..900&display=swap' rel='stylesheet'>
+  <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC' crossorigin='anonymous'>
+  <style>
+    * {
+      font-family: Vazirmatn, serif
+    }
+    body {
+      direction: rtl
+    }
+  </style>
+</head>
+<body>
+
+<div class='container mt-5'>
+  <div class='row justify-content-md-center'>
+    <div class='col-6'>
+      <h1 class='mb-3'>فرم ثبت‌نام</h1>
+
+      <form class='row g-3' id='registrationForm' onsubmit='return validateForm()'>
+        <div class='col-12'>
+          <label class='form-label' for='username'>نام کاربری:</label>
+          <input class='form-control' type='text' id='username' name='username'>
+          <div id='usernameError' class='text-danger'></div>
+        </div>
+        <div class='col-12'>
+          <label class='form-label' for='email'>ایمیل:</label>
+          <input class='form-control' type='email' id='email' name='email'>
+          <div id='emailError' class='text-danger'></div>
+        </div>
+        <div class='col-12'>
+          <label class='form-label' for='password'>کلمه عبور:</label>
+          <input class='form-control' type='password' id='password' name='password'>
+          <div id='passwordError' class='text-danger'></div>
+        </div>
+        <div class='col-12'>
+          <label class='form-label' for='confirmPassword'>تأیید کلمه عبور:</label>
+          <input class='form-control' type='password' id='confirmPassword' name='confirmPassword'>
+          <div id='confirmPasswordError' class='text-danger'></div>
+        </div>
+        <div class='col-12'>
+          <button class='btn btn-primary w-100' type='submit'>ثبت‌نام</button>
+        </div>
+      </form>
+
+      <div id='successMessage' class='text-success text-center mt-3'></div>
+    </div>
+  </div>
+</div>
+
+<script>
+  function validateForm() {
+
+    document.getElementById('usernameError').textContent = '';
+    document.getElementById('emailError').textContent = '';
+    document.getElementById('passwordError').textContent = '';
+    document.getElementById('confirmPasswordError').textContent = '';
+    document.getElementById('successMessage').textContent = '';
+
+    let isValid = true;
+
+    const username = document.getElementById('username').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const password = document.getElementById('password').value;
+    const confirmPassword = document.getElementById('confirmPassword').value;
+
+    // check username required and minimum character (3 characters)
+
+    // check email required and email format
+
+    // check password required and minimum character (6 characters)
+
+    // check confirm password required and equal password
+
+    // if is valid, show the success message
+
+  }
+
+  function validateEmail(email) {
+    // validate email
+  }
+</script>
+
+</body>
+</html>
