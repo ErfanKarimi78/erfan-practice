@@ -1,91 +1,169 @@
 <!DOCTYPE html>
-<html lang='fa'>
-<head>
-  <meta charset='UTF-8'>
-  <title>فرم ثبت‌نام کاربر</title>
-  <link rel='preconnect' href='https://fonts.googleapis.com'>
-  <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
-  <link href='https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100..900&display=swap' rel='stylesheet'>
-  <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC' crossorigin='anonymous'>
-  <style>
-    * {
-      font-family: Vazirmatn, serif
-    }
-    body {
-      direction: rtl
-    }
-  </style>
-</head>
-<body>
+<html lang="fa">
+  <head>
+    <meta charset="UTF-8" />
+    <title>فرم ثبت‌نام کاربر</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <style>
+      * {
+        font-family: Vazirmatn, serif;
+      }
+      body {
+        direction: rtl;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container mt-5">
+      <div class="row justify-content-md-center">
+        <div class="col-6">
+          <h1 class="mb-3">فرم ثبت‌نام</h1>
 
-<div class='container mt-5'>
-  <div class='row justify-content-md-center'>
-    <div class='col-6'>
-      <h1 class='mb-3'>فرم ثبت‌نام</h1>
+          <form
+            class="row g-3"
+            id="registrationForm"
+            onsubmit="return validateForm()"
+          >
+            <div class="col-12">
+              <label class="form-label" for="username">نام کاربری:</label>
+              <input
+                class="form-control"
+                type="text"
+                id="username"
+                name="username"
+              />
+              <div id="usernameError" class="text-danger"></div>
+            </div>
+            <div class="col-12">
+              <label class="form-label" for="email">ایمیل:</label>
+              <input
+                class="form-control"
+                type="email"
+                id="email"
+                name="email"
+              />
+              <div id="emailError" class="text-danger"></div>
+            </div>
+            <div class="col-12">
+              <label class="form-label" for="password">کلمه عبور:</label>
+              <input
+                class="form-control"
+                type="password"
+                id="password"
+                name="password"
+              />
+              <div id="passwordError" class="text-danger"></div>
+            </div>
+            <div class="col-12">
+              <label class="form-label" for="confirmPassword"
+                >تأیید کلمه عبور:</label
+              >
+              <input
+                class="form-control"
+                type="password"
+                id="confirmPassword"
+                name="confirmPassword"
+              />
+              <div id="confirmPasswordError" class="text-danger"></div>
+            </div>
+            <div class="col-12">
+              <button class="btn btn-primary w-100" type="submit">
+                ثبت‌نام
+              </button>
+            </div>
+          </form>
 
-      <form class='row g-3' id='registrationForm' onsubmit='return validateForm()'>
-        <div class='col-12'>
-          <label class='form-label' for='username'>نام کاربری:</label>
-          <input class='form-control' type='text' id='username' name='username'>
-          <div id='usernameError' class='text-danger'></div>
+          <div id="successMessage" class="text-success text-center mt-3"></div>
         </div>
-        <div class='col-12'>
-          <label class='form-label' for='email'>ایمیل:</label>
-          <input class='form-control' type='email' id='email' name='email'>
-          <div id='emailError' class='text-danger'></div>
-        </div>
-        <div class='col-12'>
-          <label class='form-label' for='password'>کلمه عبور:</label>
-          <input class='form-control' type='password' id='password' name='password'>
-          <div id='passwordError' class='text-danger'></div>
-        </div>
-        <div class='col-12'>
-          <label class='form-label' for='confirmPassword'>تأیید کلمه عبور:</label>
-          <input class='form-control' type='password' id='confirmPassword' name='confirmPassword'>
-          <div id='confirmPasswordError' class='text-danger'></div>
-        </div>
-        <div class='col-12'>
-          <button class='btn btn-primary w-100' type='submit'>ثبت‌نام</button>
-        </div>
-      </form>
-
-      <div id='successMessage' class='text-success text-center mt-3'></div>
+      </div>
     </div>
-  </div>
-</div>
 
-<script>
-  function validateForm() {
+    <script>
+      function validateForm() {
+        document.getElementById("usernameError").textContent = "";
+        document.getElementById("emailError").textContent = "";
+        document.getElementById("passwordError").textContent = "";
+        document.getElementById("confirmPasswordError").textContent = "";
+        document.getElementById("successMessage").textContent = "";
 
-    document.getElementById('usernameError').textContent = '';
-    document.getElementById('emailError').textContent = '';
-    document.getElementById('passwordError').textContent = '';
-    document.getElementById('confirmPasswordError').textContent = '';
-    document.getElementById('successMessage').textContent = '';
+        let isValid = true;
 
-    let isValid = true;
+        const username = document.getElementById("username").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const password = document.getElementById("password").value;
+        const confirmPassword =
+          document.getElementById("confirmPassword").value;
 
-    const username = document.getElementById('username').value.trim();
-    const email = document.getElementById('email').value.trim();
-    const password = document.getElementById('password').value;
-    const confirmPassword = document.getElementById('confirmPassword').value;
+        // check username required and minimum character (3 characters)
+        if (username === "") {
+          document.getElementById("usernameError").textContent =
+            "لطفاً نام کاربری خود را وارد کنید.";
+          isValid = false;
+        } else if (username.length < 3) {
+          document.getElementById("usernameError").textContent =
+            "نام کاربری باید حداقل ۳ کاراکتر باشد.";
+          isValid = false;
+        }
 
-    // check username required and minimum character (3 characters)
+        // check email required and email format
+        if (email === "") {
+          document.getElementById("emailError").textContent =
+            "لطفا ایمیل خود را وارد کنید";
+          isValid = false;
+        } else if (!validateEmail(email)) {
+          document.getElementById("emailError").textContent =
+            "ایمیل صحیح نمیباشد";
+          isValid = false;
+        }
 
-    // check email required and email format
+        // check password required and minimum character (6 characters)
+        if (password === "") {
+          document.getElementById("passwordError").textContent =
+            "لطفا رمز خود را وارد کنید";
+          isValid = false;
+        } else if (password.length < 6) {
+          document.getElementById("passwordError").textContent =
+            "رمز عبور باید حداقل 6 کاراکتر باشد";
+          isValid = false;
+        }
 
-    // check password required and minimum character (6 characters)
+        // check confirm password required and equal password
+        if (confirmPassword === "") {
+          document.getElementById("confirmPasswordError").textContent =
+            "رمز عبور را وارد کنید";
+          isValid = false;
+        } else if (confirmPassword !== password) {
+          document.getElementById("confirmPasswordError").textContent =
+            "باید با رمز عبور یکسان باشد";
+          isValid = false;
+        }
 
-    // check confirm password required and equal password
+        // if is valid, show the success message
+        if (isValid) {
+          document.getElementById("successMessage").textContent =
+            "کاربر با موفقیت ثبت نام شد";
+        }
 
-    // if is valid, show the success message
+        return isValid;
+      }
 
-  }
-
-  function validateEmail(email) {
-    // validate email
-  }
-</script>
-
-</body>
+      function validateEmail(email) {
+        // validate email
+        const emailValidate =
+          /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+        return emailValidate.test(email);
+      }
+    </script>
+  </body>
 </html>
