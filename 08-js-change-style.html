@@ -1,87 +1,145 @@
 <!DOCTYPE html>
 <html lang="fa">
-<head>
-  <meta charset="UTF-8">
-  <title>تغییر استایل متن</title>
-  <link rel='preconnect' href='https://fonts.googleapis.com'>
-  <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
-  <link href='https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100..900&display=swap' rel='stylesheet'>
-  <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC' crossorigin='anonymous'>
-  <style>
-    * {
-      font-family: Vazirmatn, serif
-    }
-    body {
-      direction: rtl
-    }
-    #text {
-      margin: 20px;
-      font-size: 16px;
-      color: black;
-      font-family: 'Arial', sans-serif;
-    }
-    button {
-      padding: 10px 15px;
-      font-size: 14px;
-      margin: 5px;
-      cursor: pointer;
-      min-width: 100px;
-    }
-  </style>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <title>تغییر استایل متن</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <style>
+      * {
+        font-family: Vazirmatn, serif;
+      }
+      body {
+        direction: rtl;
+      }
+      #text {
+        margin: 20px;
+        font-size: 16px;
+        color: black;
+        font-family: "Arial", sans-serif;
+      }
+      button {
+        padding: 10px 15px;
+        font-size: 14px;
+        margin: 5px;
+        cursor: pointer;
+        min-width: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container mt-5">
+      <div class="row justify-content-center">
+        <div class="col-6">
+          <h1 class="text-center">تغییر استایل متن</h1>
 
-<div class='container mt-5'>
-  <div class='row justify-content-center'>
-    <div class='col-6'>
+          <p id="text" class="text-center">
+            این یک متن نمونه است که می‌توانید استایل آن را تغییر دهید.
+          </p>
 
-      <h1 class='text-center'>تغییر استایل متن</h1>
+          <div class="d-flex align-items-center justify-content-between">
+            <h3 class="mb-0">اندازه فونت:</h3>
+            <div>
+              <button
+                class="btn btn-sm btn-success w-"
+                onclick="changeFontSize(14)"
+              >
+                14px
+              </button>
+              <button
+                class="btn btn-sm btn-success w-"
+                onclick="changeFontSize(18)"
+              >
+                18px
+              </button>
+              <button
+                class="btn btn-sm btn-success w-"
+                onclick="changeFontSize(22)"
+              >
+                22px
+              </button>
+            </div>
+          </div>
 
-      <p id="text" class='text-center'>این یک متن نمونه است که می‌توانید استایل آن را تغییر دهید.</p>
+          <div class="d-flex align-items-center justify-content-between">
+            <h3 class="mb-0">رنگ متن:</h3>
+            <div>
+              <button
+                class="btn btn-sm btn-dark"
+                onclick="changeColor('black')"
+              >
+                مشکی
+              </button>
+              <button
+                class="btn btn-sm btn-primary"
+                onclick="changeColor('blue')"
+              >
+                آبی
+              </button>
+              <button
+                class="btn btn-sm btn-danger"
+                onclick="changeColor('red')"
+              >
+                قرمز
+              </button>
+            </div>
+          </div>
 
-      <div class='d-flex align-items-center justify-content-between'>
-        <h3 class='mb-0'>اندازه فونت:</h3>
-        <div>
-          <button class='btn btn-sm btn-success w-' onclick="changeFontSize(14)">14px</button>
-          <button class='btn btn-sm btn-success w-' onclick="changeFontSize(18)">18px</button>
-          <button class='btn btn-sm btn-success w-' onclick="changeFontSize(22)">22px</button>
-        </div>
-      </div>
-
-      <div class='d-flex align-items-center justify-content-between'>
-        <h3 class='mb-0'>رنگ متن:</h3>
-        <div>
-          <button class='btn btn-sm btn-dark' onclick="changeColor('black')">مشکی</button>
-          <button class='btn btn-sm btn-primary' onclick="changeColor('blue')">آبی</button>
-          <button class='btn btn-sm btn-danger' onclick="changeColor('red')">قرمز</button>
-        </div>
-      </div>
-
-      <div class='d-flex align-items-center justify-content-between'>
-        <h3 class='mb-0'>نوع فونت:</h3>
-        <div>
-          <button class='btn btn-sm btn-warning' onclick="changeFontFamily('Arial')">Arial</button>
-          <button class='btn btn-sm btn-warning' onclick="changeFontFamily('Tahoma')">Tahoma</button>
-          <button class='btn btn-sm btn-warning' onclick="changeFontFamily('Courier New')">Courier New</button>
+          <div class="d-flex align-items-center justify-content-between">
+            <h3 class="mb-0">نوع فونت:</h3>
+            <div>
+              <button
+                class="btn btn-sm btn-warning"
+                onclick="changeFontFamily('Arial')"
+              >
+                Arial
+              </button>
+              <button
+                class="btn btn-sm btn-warning"
+                onclick="changeFontFamily('Tahoma')"
+              >
+                Tahoma
+              </button>
+              <button
+                class="btn btn-sm btn-warning"
+                onclick="changeFontFamily('Courier New')"
+              >
+                Courier New
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</div>
 
-<script>
-  function changeFontSize(size) {
-    // change font size
-  }
+    <script>
+      function changeFontSize(size) {
+        // change font size
+        const fontSizebtn = document.getElementById("text");
+        fontSizebtn.style.fontSize = size + "px";
+      }
 
-  function changeColor(color) {
-    // change font color
-  }
+      function changeColor(color) {
+        // change font color
+        const colorbtn = document.getElementById("text");
+        colorbtn.style.color = color;
+      }
 
-  function changeFontFamily(font) {
-    // change font family
-  }
-</script>
-
-</body>
+      function changeFontFamily(font) {
+        // change font family
+        const fontFamilybtn = document.getElementById("text");
+        fontFamilybtn.style.fontFamily = font;
+      }
+    </script>
+  </body>
 </html>
